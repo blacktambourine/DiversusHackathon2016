@@ -45,9 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\JsonHelper.cs" />
+    <Compile Include="Helpers\RequestHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
     <Compile Include="Helpers\ValidateParam.cs" />
     <Compile Include="Implementation\WebApiDataProvider.cs" />
+    <Compile Include="Implementation\WebApiPolygonDataProvider.cs" />
     <Compile Include="Interfaces\IDataProvider.cs" />
     <Compile Include="Models\DataPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

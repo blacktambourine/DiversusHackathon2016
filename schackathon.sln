@@ -33,13 +33,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Common.Website", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenDataAgent", "OpenDataAgent", "{887E63F4-E01A-4A85-902A-F16E900B4300}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenDataRepository", "OpenDataRepository", "{0B77BEDD-CD57-43C0-BA41-E3D6F6681EA9}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenDataMap", "OpenDataMap", "{CC37122F-5C20-486F-AAAA-00945860F501}"
 EndProject
 Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Diversus.Hackathon2016.TDS.OpenDataAgent", "src\Feature\OpenDataAgent\TDS\Diversus.Hackathon2016.OpenDataAgent\Diversus.Hackathon2016.TDS.OpenDataAgent.scproj", "{6B4F585C-7900-4A15-B40A-2734545A9AAB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diversus.Hackathon2016.Foundation.OpenDataAgent", "src\Feature\OpenDataAgent\Code\Diversus.Hackathon2016.Foundation.OpenDataAgent\Diversus.Hackathon2016.Foundation.OpenDataAgent.csproj", "{A069AEE9-8BD8-41A7-B23C-417DB6FB269F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GoogleMapsHelpers", "GoogleMapsHelpers", "{68698F80-5E2B-43E2-A2D7-530479736752}"
 EndProject
@@ -47,11 +43,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Open Data Mapping Providers
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diversus.Foundation.OpenDataMapping.DataProviderTests", "src\Foundation\Open Data Mapping Providers\Tests\Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviderTests\Diversus.Foundation.OpenDataMapping.DataProviderTests.csproj", "{54AE61AD-C6EA-48D4-ADE4-870CF50681C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diversus.Hackathon2016.Foundation.GoogleMapsHelpers", "src\Foundation\GoogleMapsHelpers\code\Diversus.Hackathon2016.Foundation.GoogleMapsHelpers.csproj", "{B752CB40-93AF-4B80-9714-E5FF5D3C0AC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.GoogleMapsHelpers", "src\Foundation\GoogleMapsHelpers\code\Sitecore.Foundation.GoogleMapsHelpers.csproj", "{B752CB40-93AF-4B80-9714-E5FF5D3C0AC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diversus.Feature.OpenDataMap", "src\Feature\OpenDataMap\Diversus.Feature.OpenDataMap\Diversus.Feature.OpenDataMap.csproj", "{2CC06924-71B9-4214-90BB-00B35DFD2513}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.OpenDataMapping.DataProviders", "src\Foundation\Open Data Mapping Providers\code\Sitecore.Foundation.OpenDataMapping.DataProviders.csproj", "{58D0DE57-0534-4C06-930F-591C7A692845}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diversus.OpenDataMapping.DataProviders", "src\Foundation\Open Data Mapping Providers\code\Diversus.OpenDataMapping.DataProviders.csproj", "{58D0DE57-0534-4C06-930F-591C7A692845}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.OpenDataAgent", "src\Feature\OpenDataAgent\code\Sitecore.Feature.OpenDataAgent.csproj", "{A069AEE9-8BD8-41A7-B23C-417DB6FB269F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.OpenDataMap", "src\Feature\OpenDataMap\code\Sitecore.Feature.OpenDataMap.csproj", "{2CC06924-71B9-4214-90BB-00B35DFD2513}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,10 +71,6 @@ Global
 		{6B4F585C-7900-4A15-B40A-2734545A9AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B4F585C-7900-4A15-B40A-2734545A9AAB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6B4F585C-7900-4A15-B40A-2734545A9AAB}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{A069AEE9-8BD8-41A7-B23C-417DB6FB269F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A069AEE9-8BD8-41A7-B23C-417DB6FB269F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A069AEE9-8BD8-41A7-B23C-417DB6FB269F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A069AEE9-8BD8-41A7-B23C-417DB6FB269F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{54AE61AD-C6EA-48D4-ADE4-870CF50681C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{54AE61AD-C6EA-48D4-ADE4-870CF50681C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54AE61AD-C6EA-48D4-ADE4-870CF50681C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -85,14 +79,18 @@ Global
 		{B752CB40-93AF-4B80-9714-E5FF5D3C0AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B752CB40-93AF-4B80-9714-E5FF5D3C0AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B752CB40-93AF-4B80-9714-E5FF5D3C0AC7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2CC06924-71B9-4214-90BB-00B35DFD2513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2CC06924-71B9-4214-90BB-00B35DFD2513}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2CC06924-71B9-4214-90BB-00B35DFD2513}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2CC06924-71B9-4214-90BB-00B35DFD2513}.Release|Any CPU.Build.0 = Release|Any CPU
 		{58D0DE57-0534-4C06-930F-591C7A692845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{58D0DE57-0534-4C06-930F-591C7A692845}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58D0DE57-0534-4C06-930F-591C7A692845}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58D0DE57-0534-4C06-930F-591C7A692845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A069AEE9-8BD8-41A7-B23C-417DB6FB269F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A069AEE9-8BD8-41A7-B23C-417DB6FB269F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A069AEE9-8BD8-41A7-B23C-417DB6FB269F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A069AEE9-8BD8-41A7-B23C-417DB6FB269F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CC06924-71B9-4214-90BB-00B35DFD2513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC06924-71B9-4214-90BB-00B35DFD2513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC06924-71B9-4214-90BB-00B35DFD2513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC06924-71B9-4214-90BB-00B35DFD2513}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,15 +101,14 @@ Global
 		{D584C2DC-7F5F-447A-831C-8C5A75277FAF} = {66C06FB8-EFD1-4A2E-9501-0D7E1E087577}
 		{C98EAD78-4D83-4789-A621-6011C3D7314D} = {88EBE17C-B7C1-4CEB-9624-160EFBA922A3}
 		{887E63F4-E01A-4A85-902A-F16E900B4300} = {D26C4D85-623C-4413-925F-6F57C7B472AC}
-		{0B77BEDD-CD57-43C0-BA41-E3D6F6681EA9} = {D26C4D85-623C-4413-925F-6F57C7B472AC}
 		{CC37122F-5C20-486F-AAAA-00945860F501} = {D26C4D85-623C-4413-925F-6F57C7B472AC}
 		{6B4F585C-7900-4A15-B40A-2734545A9AAB} = {887E63F4-E01A-4A85-902A-F16E900B4300}
-		{A069AEE9-8BD8-41A7-B23C-417DB6FB269F} = {887E63F4-E01A-4A85-902A-F16E900B4300}
 		{68698F80-5E2B-43E2-A2D7-530479736752} = {F8F8E1D3-CC62-4F56-963B-9984C063418F}
 		{93BC15DE-51B4-42DC-8651-3DF4262B4A5B} = {F8F8E1D3-CC62-4F56-963B-9984C063418F}
 		{54AE61AD-C6EA-48D4-ADE4-870CF50681C0} = {93BC15DE-51B4-42DC-8651-3DF4262B4A5B}
 		{B752CB40-93AF-4B80-9714-E5FF5D3C0AC7} = {68698F80-5E2B-43E2-A2D7-530479736752}
-		{2CC06924-71B9-4214-90BB-00B35DFD2513} = {CC37122F-5C20-486F-AAAA-00945860F501}
 		{58D0DE57-0534-4C06-930F-591C7A692845} = {93BC15DE-51B4-42DC-8651-3DF4262B4A5B}
+		{A069AEE9-8BD8-41A7-B23C-417DB6FB269F} = {887E63F4-E01A-4A85-902A-F16E900B4300}
+		{2CC06924-71B9-4214-90BB-00B35DFD2513} = {CC37122F-5C20-486F-AAAA-00945860F501}
 	EndGlobalSection
 EndGlobal

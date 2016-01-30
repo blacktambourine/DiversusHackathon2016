@@ -61,9 +61,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\code\Diversus.OpenDataMapping.DataProviders.csproj">
+    <ProjectReference Include="..\..\code\Sitecore.Foundation.OpenDataMapping.DataProviders.csproj">
       <Project>{58d0de57-0534-4c06-930f-591c7a692845}</Project>
-      <Name>Diversus.OpenDataMapping.DataProviders</Name>
+      <Name>Sitecore.Foundation.OpenDataMapping.DataProviders</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

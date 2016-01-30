@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Properties {
+namespace Sitecore.Feature.OpenDataAgent.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

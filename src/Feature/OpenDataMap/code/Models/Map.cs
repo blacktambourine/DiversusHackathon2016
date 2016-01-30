@@ -1,8 +1,6 @@
 ﻿using Diversus.Hackathon2016.Foundation.OpenDataAgent.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace Diversus.Feature.OpenDataMap.Models
 {

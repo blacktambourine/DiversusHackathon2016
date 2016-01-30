@@ -7,8 +7,8 @@
     <ProjectGuid>{58D0DE57-0534-4C06-930F-591C7A692845}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Diversus.ATeam.Hackathon2016.OpenDataMApping.DataProviders</RootNamespace>
-    <AssemblyName>Diversus.ATeam.Hackathon2016.OpenDataMApping.DataProviders</AssemblyName>
+    <RootNamespace>Sitecore.Foundation.OpenDataMapping.DataProviders</RootNamespace>
+    <AssemblyName>Sitecore.Foundation.OpenDataMapping.DataProviders</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

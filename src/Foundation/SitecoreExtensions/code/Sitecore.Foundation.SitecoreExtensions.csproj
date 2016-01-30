@@ -83,12 +83,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore.ContentSearch.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Foundation.Indexing">
+      <HintPath>..\..\..\..\lib\Sitecore.Foundation.Indexing.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Foundation.SitecoreExtensions">
+      <HintPath>..\..\..\..\lib\Sitecore.Foundation.SitecoreExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.Mvc">
       <HintPath>..\..\..\..\lib\Sitecore.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Web">
+      <HintPath>..\..\..\..\lib\Sitecore.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data.DataSetExtensions" />

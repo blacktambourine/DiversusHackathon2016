@@ -155,12 +155,6 @@
     <Compile Include="Texts\Captions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
-      <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>
-      <Name>Sitecore.Foundation.SitecoreExtensions</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Content\" />
   </ItemGroup>
   <PropertyGroup>

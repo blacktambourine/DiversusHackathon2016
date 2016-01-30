@@ -69,12 +69,15 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Feature\Open Data Agent\_OpenMappingDataPoint.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Feature\Open Data Agent\_OpenMappingDataset.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Feature\Open Data Agent\_OpenMappingRespository.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />

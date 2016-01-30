@@ -75,10 +75,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="scripts\Foundation.GoogleMapHelpers.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Config\Include\Foundation\" />
+    <Folder Include="assets\plugins\" />
+    <Folder Include="images\" />
+    <Folder Include="stylesheets\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

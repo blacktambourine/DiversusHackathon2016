@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Diversus.ATeam.Hackathon2016.OpenDataMApping.DataProviders.Models
+namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Models
 {
-    class DataPoint
+    public class DataPoint
     {
         public DataPoint(string title, LocationPoint point)
         {

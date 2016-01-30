@@ -10,6 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Models;
 
 namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Implementation
 {
@@ -94,6 +95,11 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Implementat
         {
             public System.Reflection.PropertyInfo DataPointProperty { get; set; }
             public int MyProperty { get; set; }
+        }
+
+        public IEnumerable<DataPoint> Execute(Dictionary<string, string> parameters)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Sitecore;
 using Sitecore.Data.Items;
+using Sitecore.Data.Managers;
 using Sitecore.Diagnostics;
 using Sitecore.Foundation.SitecoreExtensions.Extensions;
 using System;
@@ -12,21 +13,34 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Models
     public class DataPoint
     {
         Item _item;
+        //Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Models
+        public DataPoint(ATeam.Hackathon2016.OpenDataMapping.DataProviders.Models.DataPoint datapoint, DataSet set)
+        {
+            // Too tired to write this code properly
+            TemplateItem template = Sitecore.Configuration.Factory.GetDatabase("master").GetTemplate(Templates.DataPoint.ID);
+
+            Item _item = ItemManager.CreateItem(datapoint.Title, set.InnerItem, template.ID);
+            
+            _item.Editing.BeginEdit();
+            this.Point = new LocationPoint(datapoint.Location);
+            this.Title = datapoint.Title;
+            _item.Editing.EndEdit();
+        }
         public DataPoint(Item item)
         {
             Assert.IsTrue(item.IsDerived(Templates.DataPoint.ID), $"item must derive {0}",Templates.DataPoint.ID);
             _item = item;
         }
-        public IEnumerable<LocationPoint> Points
+        public LocationPoint Point
         {
             get
             {
                 var raw = StringUtil.GetString(_item[Templates.DataPoint.Points], string.Empty);
-                return raw.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries).Select(LocationPoint.FromString);
+                return LocationPoint.FromString(raw);
             }
             set
             {
-                _item[Templates.DataPoint.Points] = string.Join("|", value);
+                _item[Templates.DataPoint.Points] = value.ToString();
             }
         }
         public string Title
@@ -50,6 +64,12 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Models
                     Lat = MainUtil.GetFloat(array[0], -31.954891f),
                     Lng = MainUtil.GetFloat(array[1], 115.858424f)
                 };
+            }
+            public LocationPoint() { }
+            public LocationPoint(ATeam.Hackathon2016.OpenDataMapping.DataProviders.Models.DataPoint.LocationPoint point)
+            {
+                Lat = point.Lat;
+                Lng = point.Lng;
             }
             public float Lat { get; set; }
             public float Lng { get; set; }

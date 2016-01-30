@@ -107,7 +107,12 @@
     <Compile Include="Repositories\OpenDataAgentRepository.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Foundation\Open Data Mapping Providers\code\Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders\Diversus.OpenDataMapping.DataProviders.csproj">
+      <Project>{baac6393-3643-4271-bfdf-13a4d257c725}</Project>
+      <Name>Diversus.OpenDataMapping.DataProviders</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

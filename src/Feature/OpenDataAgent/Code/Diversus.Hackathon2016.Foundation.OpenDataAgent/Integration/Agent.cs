@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Interfaces;
+using Diversus.Hackathon2016.Foundation.OpenDataAgent.Models;
+using Sitecore.Foundation.SitecoreExtensions.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -27,7 +30,21 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Integration
 
         private void UpdateAnyOpenDataRepositories(string path)
         {
+            var masterDatabase = Sitecore.Configuration.Factory.GetDatabase("master");
+            var repos = masterDatabase.SelectItems(path).Where(x=> x.IsDerived(Templates.Repository.ID)).Select(x=> new Repository(x));
 
+            foreach(var repo in repos)
+            {
+                foreach(var dataset in repo.Datasets)
+                {
+                    var provider = dataset.AggregationProvider;
+
+                    if(typeof(IDataProvider).IsAssignableFrom(provider))
+                    {
+
+                    }
+                }
+            }
         }
     }
 }

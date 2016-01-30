@@ -13,6 +13,10 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Models
     public class DataSet
     {
         private Item _dataset;
+        public Item InnerItem
+        {
+            get { return _dataset; }
+        }
         public DataSet(Item dataset)
         {
             Assert.IsTrue(dataset.IsDerived(Templates.DataSet.ID),

@@ -68,9 +68,18 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Implementat
             this._sourceData = this.MakeRequest(this.WebAPIUrl);
         }
 
-        public void Execute()
+        public IEnumerable<JToken> Execute(string jsonPath, string webApiUrl)
         {
-            throw new NotImplementedException();
+
+            // Make the request and get the response
+            var jsonResonse = this.MakeRequest(webApiUrl);
+
+            // TODO : validate response?
+
+            // extract and map to datapoints
+            IEnumerable<JToken> dataPoints = jsonResonse.SelectTokens(jsonPath);
+
+            return dataPoints;
         }
 
         /// <summary>

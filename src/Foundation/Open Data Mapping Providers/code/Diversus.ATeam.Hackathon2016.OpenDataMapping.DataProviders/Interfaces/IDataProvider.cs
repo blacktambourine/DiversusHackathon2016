@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Interfaces
 {
     public interface IDataProvider
     {
-        void Execute();
+        IEnumerable<JToken> Execute(string fieldsToMap, string webApiUrl);
 
         void ReadConfig();
 

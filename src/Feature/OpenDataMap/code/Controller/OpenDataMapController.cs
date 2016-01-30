@@ -1,16 +1,17 @@
 ﻿using System.Web.Mvc;
-using Sitecore.Mvc.Presentation;
 using Newtonsoft.Json;
+using Sitecore.Mvc.Presentation;
 
-namespace Diversus.Feature.OpenDataMap.Controller
+namespace Sitecore.Feature.OpenDataMap.Controller
 {
     public class OpenDataMapController : System.Web.Mvc.Controller
     {
         // GET: OpenDataMap
         public ActionResult OpenDataMap()
         {
-            var map = new Models.Map(new Hackathon2016.Foundation.OpenDataAgent.Models.Repository(RenderingContext.Current.Rendering.Item));
-            var items = JsonConvert.SerializeObject(map);
+            //var map = new Diversus.Feature.OpenDataMap.Models.Map(new Diversus.Hackathon2016.Foundation.OpenDataAgent.Models.Repository(RenderingContext.Current.Rendering.Item));
+            //var items = JsonConvert.SerializeObject(map);
+            var items = "";
             return this.View("OpenDataMapWidget", items);
         }
     }

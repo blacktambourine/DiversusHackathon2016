@@ -121,6 +121,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Views\OpenDataMap\OpenDataMapWidget.cshtml" />
+    <Content Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

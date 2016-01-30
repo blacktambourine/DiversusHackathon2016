@@ -34,5 +34,18 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviderTests
             // Assert
             Assert.IsNotNull(response);
         }
+
+        [Test]
+        [TestCase("$.results.[*].address.location", "http://services.realestate.com.au/services/listings/sold/in-Mandurah,WA%206210/with-market-category/house")]
+        public void CanExecute(string jsonPath, string webApUrl)
+        {
+            // Arrange
+
+            // Act
+            var x = _dataProvider.Execute(jsonPath, webApUrl);
+
+            // Assert
+            Assert.IsNotNull(x);
+        }
     }
 }

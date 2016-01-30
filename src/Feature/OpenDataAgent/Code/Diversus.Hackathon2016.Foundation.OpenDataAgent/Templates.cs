@@ -14,6 +14,8 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent
             public static readonly ID Title = new ID("{C116F31A-D6ED-49B1-BFA7-318FA08D2A80}");
             public static readonly ID Points = new ID("{4C65C83A-CC38-4AAB-B6F6-D7D9730D9435}");
             public static readonly ID Value = new ID("{0C10A605-0AF2-4E95-B7BE-ED3375B644B3}");
+            public static readonly ID Type = new ID("{F2586C13-3CDE-4F9A-B79E-E9B1BB3A0E7B}");
+
         }
         public static class DataSet
         {

@@ -14,7 +14,7 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Models
     {
         Item _item;
         //Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Models
-        public DataPoint(ATeam.Hackathon2016.OpenDataMapping.DataProviders.Models.DataPoint datapoint, DataSet set)
+        public DataPoint(Diversus.ATeam.Hackathon2016.OpenDataMApping.DataProviders.Models.DataPoint datapoint, DataSet set)
         {
             // Too tired to write this code properly
             TemplateItem template = Sitecore.Configuration.Factory.GetDatabase("master").GetTemplate(Templates.DataPoint.ID);
@@ -22,7 +22,7 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Models
             Item _item = ItemManager.CreateItem(datapoint.Title, set.InnerItem, template.ID);
             
             _item.Editing.BeginEdit();
-            this.Points = datapoint.Locations.Select(x=> new LocationPoint(x));
+            this.Point = new LocationPoint(MainUtil.GetFloat(datapoint.Latitude, 0.0f), MainUtil.GetFloat(datapoint.Longitude,0.0f));
             this.Title = datapoint.Title;
             _item.Editing.EndEdit();
         }
@@ -31,16 +31,16 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Models
             Assert.IsTrue(item.IsDerived(Templates.DataPoint.ID), $"item must derive {0}",Templates.DataPoint.ID);
             _item = item;
         }
-        public IEnumerable<LocationPoint> Points
+        public LocationPoint Point
         {
             get
             {
                 var raw = StringUtil.GetString(_item[Templates.DataPoint.Points], string.Empty);
-                return raw.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries).Select(LocationPoint.FromString);
+                return LocationPoint.FromString(raw);
             }
             set
             {
-                _item[Templates.DataPoint.Points] = string.Join("|", value);
+                _item[Templates.DataPoint.Points] = value.ToString();
             }
         }
         public string Title
@@ -54,6 +54,8 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Models
                 _item[Templates.DataPoint.Title] = value;
             }
         }
+        
+
         public class LocationPoint
         { 
             public static LocationPoint FromString(string pair)
@@ -66,10 +68,10 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Models
                 };
             }
             public LocationPoint() { }
-            public LocationPoint(ATeam.Hackathon2016.OpenDataMapping.DataProviders.Models.DataPoint.LocationPoint point)
+            public LocationPoint(float lat, float lng)
             {
-                Lat = point.Lat;
-                Lng = point.Lng;
+                Lat = lat;
+                Lng = lng;
             }
             public float Lat { get; set; }
             public float Lng { get; set; }

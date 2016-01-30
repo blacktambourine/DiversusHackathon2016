@@ -94,7 +94,13 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Models
             }
         }
         //-	DataPointType
-        public DataPoint Coordinates { get; set; }
+        public IEnumerable<DataPoint> Points
+        {
+            get
+            {
+                return _dataset.Children.Select(x => new DataPoint(x));
+            }
+        }
         //-	Colour
         public string Colour
         {

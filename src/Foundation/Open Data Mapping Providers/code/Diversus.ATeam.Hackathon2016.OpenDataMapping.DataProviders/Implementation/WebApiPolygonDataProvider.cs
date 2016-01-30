@@ -1,54 +1,36 @@
 ﻿using Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Interfaces;
-using Diversus.ATeam.Hackathon2016.OpenDataMApping.DataProviders.Helpers;
-using Diversus.ATeam.Hackathon2016.OpenDataMApping.DataProviders.Models;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Diversus.ATeam.Hackathon2016.OpenDataMApping.DataProviders.Models;
+using Diversus.ATeam.Hackathon2016.OpenDataMApping.DataProviders.Helpers;
+using Newtonsoft.Json.Linq;
 
-namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Implementation
+namespace Diversus.ATeam.Hackathon2016.OpenDataMApping.DataProviders.Implementation
 {
-    public class WebApiDataProvider : IDataProvider
+    public class WebApiPolygonDataProvider : IDataProvider
     {
-        /* Private instance variables ================================= */
-        private JObject _sourceData;
+        public string Filter { get; set; }
 
-        /* Public Properties ========================================== */
 
-        public string WebAPIUrl { get; set; }
-
-        /* Constructor ===================== */
-
-        public WebApiDataProvider(string requestUrl)
+        public WebApiPolygonDataProvider(string filter)
         {
-            if (string.IsNullOrEmpty(requestUrl))
-                throw new ArgumentException("requestUrl must not be empty");
-
-            this.WebAPIUrl = requestUrl;
+            this.Filter = filter;
         }
-
-        /* Private methods ============================================ */
-
-
 
         
 
-        /* Interface method implementations =========================== */
-        public List<DataPoint> Execute(Dictionary<string,string> fieldsToMap, string webApiUrl)
+        public List<DataPoint> Execute(Dictionary<string, string> fieldsToMap, string webApiUrl)
         {
-
             // Make the request and get the response
             var jsonResonse = RequestHelper.MakeRequest(webApiUrl);
 
             // TODO : validate response?
 
 
-            
+
             Dictionary<System.Reflection.PropertyInfo, List<JToken>> mappingPropertyInfoDictionary = new Dictionary<System.Reflection.PropertyInfo, List<JToken>>();
             int numberOfTokens = 0;
 
@@ -80,7 +62,7 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Implementat
 
                 foreach (var entry in mappingPropertyInfoDictionary)
                 {
-                    entry.Key.SetValue(dp, entry.Value[i].Value<string>());
+                    entry.Key.SetValue(dp, entry.Value);
                 }
 
                 dataPoints.Add(dp);
@@ -88,17 +70,6 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Implementat
 
 
             return dataPoints;
-        }
-
-        public class MappingPropertyInfo
-        {
-            public System.Reflection.PropertyInfo DataPointProperty { get; set; }
-            public int MyProperty { get; set; }
-        }
-
-        public IEnumerable<DataPoint> Execute(Dictionary<string, string> parameters)
-        {
-            throw new NotImplementedException();
         }
     }
 }

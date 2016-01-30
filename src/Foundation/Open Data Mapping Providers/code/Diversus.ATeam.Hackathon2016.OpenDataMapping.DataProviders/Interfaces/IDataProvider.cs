@@ -1,4 +1,4 @@
-﻿using Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Models;
+﻿using Diversus.ATeam.Hackathon2016.OpenDataMApping.DataProviders.Models;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -10,18 +10,7 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Interfaces
 {
     public interface IDataProvider
     {
-        IEnumerable<DataPoint> Execute(Dictionary<string, string> parameters);
-        IEnumerable<JToken> Execute(string fieldsToMap, string webApiUrl);
-
-        void ReadConfig();
-
-        void AccessSource();
-
-        void ReadSource();
-
-        void TransformSourceData();
-
-        void ValidateSourceData(Dictionary<string, string> fieldsToMap);
+        List<DataPoint> Execute(Dictionary<string, string> fieldsToMap, string webApiUrl);
 
     }
 }

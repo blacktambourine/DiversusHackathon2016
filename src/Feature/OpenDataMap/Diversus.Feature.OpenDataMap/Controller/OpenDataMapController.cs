@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using Sitecore.Mvc.Presentation;
+using Newtonsoft.Json;
 
 namespace Diversus.Feature.OpenDataMap.Controller
 {
@@ -8,7 +9,8 @@ namespace Diversus.Feature.OpenDataMap.Controller
         // GET: OpenDataMap
         public ActionResult OpenDataMap()
         {
-            var items = "";
+            var map = new Models.Map(new Hackathon2016.Foundation.OpenDataAgent.Models.Repository(RenderingContext.Current.Rendering.Item));
+            var items = JsonConvert.SerializeObject(map);
             return this.View("OpenDataMapWidget", items);
         }
     }

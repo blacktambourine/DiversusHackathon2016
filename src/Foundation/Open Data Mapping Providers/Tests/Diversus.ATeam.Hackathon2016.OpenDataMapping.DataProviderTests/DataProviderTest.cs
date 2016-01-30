@@ -21,28 +21,17 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviderTests
         }
 
         [Test]
-        [TestCase("http://services.realestate.com.au/services/listings/sold/in-Mandurah,WA%206210/with-market-category/house")]
-        public void CanMakeRequest(string requestUrl)
-        {
-            // Arrange
-
-            // Act
-            var response = _dataProvider.MakeRequest(requestUrl);
-
-            dynamic o = response;
-
-            // Assert
-            Assert.IsNotNull(response);
-        }
-
-        [Test]
-        [TestCase("$.results.[*].address.location", "http://services.realestate.com.au/services/listings/sold/in-Mandurah,WA%206210/with-market-category/house")]
+        [TestCase("$.results.[*].address.location.[latitude,longitude]", "http://services.realestate.com.au/services/listings/sold/in-Mandurah,WA%206210/with-market-category/house")]
         public void CanExecute(string jsonPath, string webApUrl)
         {
             // Arrange
+            var dict = new Dictionary<string, string>();
+            dict.Add("$.results.[*].title", "Title");
+            dict.Add("$.results.[*].address.location.latitude", "Latitude");
+            dict.Add("$.results.[*].address.location.longitude", "Longitude");
 
             // Act
-            var x = _dataProvider.Execute(jsonPath, webApUrl);
+            var x = _dataProvider.Execute(dict, webApUrl);
 
             // Assert
             Assert.IsNotNull(x);

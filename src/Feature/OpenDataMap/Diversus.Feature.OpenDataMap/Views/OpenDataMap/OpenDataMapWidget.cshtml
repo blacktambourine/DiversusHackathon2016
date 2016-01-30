@@ -2,17 +2,51 @@
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 
 @model IEnumerable<Sitecore.Data.Items.Item>
-    <div class="open-data-map-widget Foundation-GoogleMapHelpers">
+<div class="open-data-map-widget Foundation-GoogleMapHelpers">
 
-        <div id="map" class="map"></div>
+    <div id="map" class="map"></div>
 
-        <div id="mapFacets" class="mapFacets">
-            <input TYPE=CHECKBOX NAME="facet_0" onclick="jsGoogleMapHelpers.toggleFacet(0, 'Transit')" checked="1" class="chk-facet">Transit</input><br />
-            <input TYPE=CHECKBOX NAME="facet_1" onclick="jsGoogleMapHelpers.toggleFacet(1, 'Markers')" checked="1" class="chk-facet">Dodgy places</input><br />
-            <input TYPE=CHECKBOX NAME="facet_2" onclick="jsGoogleMapHelpers.toggleFacet(2, 'Polygon')" checked="1" class="chk-facet">NBN</input><br />
-            <input TYPE=CHECKBOX NAME="facet_3" onclick="jsGoogleMapHelpers.toggleFacet(3, 'Heatmap')" checked="1" class="chk-facet">Hot Hot Hot</input><br />
-            <input TYPE=CHECKBOX NAME="facet_11" onclick="jsGoogleMapHelpers.toggleFacet(11, 'Markers')" checked="1" class="chk-facet">Dodgy places #2</input><br />
-            <input TYPE=CHECKBOX NAME="facet_22" onclick="jsGoogleMapHelpers.toggleFacet(22, 'Polygon')" checked="1" class="chk-facet">NBN 2</input><br />
-            <input TYPE=CHECKBOX NAME="facet_33" onclick="jsGoogleMapHelpers.toggleFacet(33, 'Heatmap')" checked="1" class="chk-facet">Hot Hot Hot 2</input><br />
-        </div>
+    <div id="mapFacets" class="mapFacets">
+        <input TYPE=CHECKBOX NAME="facet_0" onclick="jsGoogleMapHelpers.toggleFacet(0, 'Transit')" checked="1" class="chk-facet">Transit</input><br/>
+        <input TYPE=CHECKBOX NAME="facet_1" onclick="jsGoogleMapHelpers.toggleFacet(1, 'Markers')" checked="1" class="chk-facet">Dodgy places</input><br/>
+        <input TYPE=CHECKBOX NAME="facet_2" onclick="jsGoogleMapHelpers.toggleFacet(2, 'Polygon')" checked="1" class="chk-facet">NBN</input><br/>
+        <input TYPE=CHECKBOX NAME="facet_3" onclick="jsGoogleMapHelpers.toggleFacet(3, 'Heatmap')" checked="1" class="chk-facet">Hot Hot Hot</input><br/>
+        <input TYPE=CHECKBOX NAME="facet_11" onclick="jsGoogleMapHelpers.toggleFacet(11, 'Markers')" checked="1" class="chk-facet">Dodgy places #2</input><br/>
+        <input TYPE=CHECKBOX NAME="facet_22" onclick="jsGoogleMapHelpers.toggleFacet(22, 'Polygon')" checked="1" class="chk-facet">NBN 2</input><br/>
+        <input TYPE=CHECKBOX NAME="facet_33" onclick="jsGoogleMapHelpers.toggleFacet(33, 'Heatmap')" checked="1" class="chk-facet">Hot Hot Hot 2</input><br/>
     </div>
+</div>
+
+<script>
+    function initMap() {
+        var facetList = [
+            { FacetId: 11, FacetType: 'Markers', FacetName: 'Dodgy places Part 2', FacetDescription: 'test desc', Colour: 'http://maps.google.com/mapfiles/ms/micons/green-dot.png', Locations: [{ lat: -32.7, lng: 115.7, title: 'Marker 3' }, { lat: -32.77, lng: 115.99, title: 'Marker 4' }] },
+            { FacetId: 1, FacetType: 'Markers', FacetName: 'Dodgy places', FacetDescription: 'test desc', Colour: 'http://maps.google.com/mapfiles/ms/micons/bar.png', Locations: [{ lat: -32.6, lng: 115.8, title: 'Marker 1' }, { lat: -32.8, lng: 115.9, title: 'Marker 2' }] },
+            { FacetId: 2, FacetType: 'Polygon', FacetName: 'NBN', FacetDescription: 'fast yo', Colour: '#00FF00', Locations: [{ lat: -32.55, lng: 115.7458347 }, { lat: -32.8, lng: 116.7458347 }, { lat: -32.7, lng: 117.7458347 }] },
+            {
+                FacetId: 3,
+                FacetType: 'Heatmap',
+                FacetName: 'Hot Hot Hot',
+                FacetDescription: 'potato',
+                Colour: '#FF00AA',
+                Locations: [{ lat: -32.782551, lng: 115.745368 }, { lat: -32.782745, lng: 115.744586 }, { lat: -32.782842, lng: 115.743688 }, { lat: -32.782919, lng: 115.742815 }]
+            },
+            { FacetId: 22, FacetType: 'Polygon', FacetName: 'NBN 2', FacetDescription: 'fast yo 2', Colour: '#00FFFF', Locations: [{ lat: -32.99, lng: 115.74 }, { lat: -32.888, lng: 116.74 }, { lat: -32.3, lng: 117.3 }] },
+            {
+                FacetId: 33,
+                FacetType: 'Heatmap',
+                FacetName: 'Hot Hot Hot 2',
+                FacetDescription: 'potato 2',
+                Colour: '#FF0000',
+                Locations: [{ lat: -32.782551, lng: 115.945368 }, { lat: -36.882745, lng: 115.944586 }, { lat: -36.882842, lng: 115.943688 }, { lat: -36.882919, lng: 115.942815 }]
+            },
+        ];
+
+        //todo: read from service
+        jsGoogleMapHelpers.initMap(-32.5375601, 115.7458347, 10, facetList);
+
+    };
+</script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaBmqKwmfzF-eT49vOWkWatDuiH4mKZh0&callback=initMap&libraries=visualization" async defer></script>

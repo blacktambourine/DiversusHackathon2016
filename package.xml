@@ -4,20 +4,23 @@
       <PackageName>Habitat package</PackageName>
       <Author>Sitecore</Author>
       <Version>1.0.0.0</Version>
-      <Revision />
-      <License />
-      <Comment />
-      <Attributes />
-      <Readme />
-      <Publisher />
+      <Revision/>
+      <License/>
+      <Comment/>
+      <Attributes/>
+      <Readme/>
+      <Publisher/>
       <PostStep>Sitecore.Foundation.Installer.PostStep, Sitecore.Foundation.Installer</PostStep>
-      <PackageID />
+      <PackageID/>
     </metadata>
   </Metadata>
   <SaveProject>True</SaveProject>
   <Sources>
     <xfiles>
-      <Entries />
+      <Entries><x-item>/web.config.transform</x-item><x-item>/bin/Diversus.Council.Website.dll</x-item><x-item>/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</x-item><x-item>/bin/Microsoft.Web.XmlTransform.dll</x-item><x-item>/bin/roslyn/csc.exe</x-item><x-item>/bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll</x-item><x-item>/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll</x-item><x-item>/bin/roslyn/Microsoft.CodeAnalysis.dll</x-item><x-item>/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll</x-item><x-item>/bin/roslyn/Microsoft.CSharp.Core.targets</x-item><x-item>/bin/roslyn/Microsoft.VisualBasic.Core.targets</x-item><x-item>/bin/roslyn/System.Collections.Immutable.dll</x-item><x-item>/bin/roslyn/System.Reflection.Metadata.dll</x-item><x-item>/bin/roslyn/vbc.exe</x-item><x-item>/bin/roslyn/VBCSCompiler.exe</x-item><x-item>/bin/roslyn/VBCSCompiler.exe.config</x-item><x-item>/App_Config/Include/Project/Common.Website.config</x-item><x-item>/App_Config/Include/Project/Common.Website.Serialization.config</x-item><x-item>/App_Config/Include/Project/Council.Website.config</x-item><x-item>/App_Config/Include/Project/Council.Website.Serialization.config</x-item><x-item>/Views/Common/Sublayouts/1 Column.cshtml</x-item><x-item>/Views/Common/Sublayouts/2 Column 3-9.cshtml</x-item><x-item>/Views/Common/Sublayouts/2 Column 4-8.cshtml</x-item><x-item>/Views/Common/Sublayouts/2 Column 6-6.cshtml</x-item><x-item>/Views/Common/Sublayouts/2 Column 8-4.cshtml</x-item><x-item>/Views/Common/Sublayouts/2 Column 9-3.cshtml</x-item><x-item>/Views/Common/Sublayouts/3 Column 3-3-6.cshtml</x-item><x-item>/Views/Common/Sublayouts/3 Column 4-4-4.cshtml</x-item><x-item>/Views/Common/Sublayouts/3 Column 6-3-3.cshtml</x-item><x-item>/Views/Common/Sublayouts/4 Column 3-3-3-3.cshtml</x-item><x-item>/Views/Common/Sublayouts/6 Column 2-2-2-2-2-2.cshtml</x-item><x-item>/Views/Common/Sublayouts/Footer.cshtml</x-item><x-item>/Views/Common/Sublayouts/Navbar.cshtml</x-item><x-item>/Views/Common/Sublayouts/PageHeading.cshtml</x-item><x-item>/Views/Common/Sublayouts/PageSidebarLeft.cshtml</x-item><x-item>/Views/Common/Sublayouts/PageSidebarRight.cshtml</x-item><x-item>/Views/Common/Sublayouts/Inner/Inner 1 Column.cshtml</x-item><x-item>/Views/Common/Sublayouts/Inner/Inner 2 Column 4-8.cshtml</x-item><x-item>/Views/Common/Sublayouts/Inner/Inner 2 Column 6-6.cshtml</x-item><x-item>/Views/Common/Sublayouts/Inner/Inner 2 Column 8-4.cshtml</x-item>
+        <x-item>/Content/GoogleMapHelpers/Foundation.GoogleMapHelpers.css</x-item>
+        <x-item>/scripts/GoogleMapHelpers/Foundation.GoogleMapHelpers.js</x-item>
+      </Entries>
       <Converter>
         <FileToEntryConverter>
           <Root>/</Root>
@@ -33,12 +36,12 @@
           </Transforms>
         </FileToEntryConverter>
       </Converter>
-      <Include />
-      <Exclude />
+      <Include/>
+      <Exclude/>
       <Name>habitat files</Name>
     </xfiles>
     <xitems>
-      <Entries />
+      <Entries/>
       <SkipVersions>False</SkipVersions>
       <Converter>
         <ItemToEntryConverter>
@@ -54,17 +57,17 @@
           </Transforms>
         </ItemToEntryConverter>
       </Converter>
-      <Include />
-      <Exclude />
+      <Include/>
+      <Exclude/>
       <Name>Habitat items</Name>
     </xitems>
   </Sources>
   <Converter>
     <TrivialConverter>
-      <Transforms />
+      <Transforms/>
     </TrivialConverter>
   </Converter>
-  <Include />
-  <Exclude />
-  <Name />
+  <Include/>
+  <Exclude/>
+  <Name/>
 </project>

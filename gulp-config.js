@@ -1,8 +1,8 @@
 module.exports = function () {
     var config = {
-        websiteRoot: "C:\\inetpub\\wwwroot\\Habitat\\Website",
-        sitecoreLibraries: "C:\\inetpub\\wwwroot\\Habitat\\Website\\bin",
-        solutionName: "Habitat",
+        websiteRoot: "C:\\Websites\\Habitat.local\\Website",
+        sitecoreLibraries: "C:\\Websites\\Habitat.local\\Website\\bin",
+        solutionName: "schackathon",
     buildConfiguration: "Debug"
     }
     return config;

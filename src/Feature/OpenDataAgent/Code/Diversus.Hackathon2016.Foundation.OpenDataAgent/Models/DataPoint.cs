@@ -22,7 +22,7 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Models
             Item _item = ItemManager.CreateItem(datapoint.Title, set.InnerItem, template.ID);
             
             _item.Editing.BeginEdit();
-            this.Points = datapoint.Locations.Select(x=> new LocationPoint(x));
+            this.Point = new LocationPoint(datapoint.Location);
             this.Title = datapoint.Title;
             _item.Editing.EndEdit();
         }
@@ -31,16 +31,16 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Models
             Assert.IsTrue(item.IsDerived(Templates.DataPoint.ID), $"item must derive {0}",Templates.DataPoint.ID);
             _item = item;
         }
-        public IEnumerable<LocationPoint> Points
+        public LocationPoint Point
         {
             get
             {
                 var raw = StringUtil.GetString(_item[Templates.DataPoint.Points], string.Empty);
-                return raw.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries).Select(LocationPoint.FromString);
+                return LocationPoint.FromString(raw);
             }
             set
             {
-                _item[Templates.DataPoint.Points] = string.Join("|", value);
+                _item[Templates.DataPoint.Points] = value.ToString();
             }
         }
         public string Title

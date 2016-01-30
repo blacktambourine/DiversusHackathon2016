@@ -123,10 +123,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\OpenDataMapController.cs" />
+    <Compile Include="Models\Map.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\OpenDataAgent\Code\Diversus.Hackathon2016.Foundation.OpenDataAgent\Diversus.Hackathon2016.Foundation.OpenDataAgent.csproj">
+      <Project>{a069aee9-8bd8-41a7-b23c-417db6fb269f}</Project>
+      <Name>Diversus.Hackathon2016.Foundation.OpenDataAgent</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

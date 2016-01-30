@@ -11,10 +11,10 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Models
         public DataPoint(string title, LocationPoint point)
         {
             Title = title;
-            Locations = new[] { point };
+            Location =  point;
         }
         public string Title { get; set; }
-        public IEnumerable<LocationPoint> Locations { get; set; }
+        public LocationPoint Location { get; set; }
         public class LocationPoint
         {
             public float Lat { get; set; }

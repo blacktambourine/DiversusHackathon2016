@@ -39,6 +39,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Demo", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions", "src\Foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Open Data Mapping Providers", "Open Data Mapping Providers", "{A537E82C-BE9E-48C2-9818-F89C72CD4461}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diversus.OpenDataMapping.DataProviders", "src\Foundation\Open Data Mapping Providers\code\Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders\Diversus.OpenDataMapping.DataProviders.csproj", "{BAAC6393-3643-4271-BFDF-13A4D257C725}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B8694640-DAEE-49C6-AADF-EA601A1765B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diversus.Foundation.OpenDataMapping.DataProviderTests", "src\Foundation\Open Data Mapping Providers\Tests\Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviderTests\Diversus.Foundation.OpenDataMapping.DataProviderTests.csproj", "{54AE61AD-C6EA-48D4-ADE4-870CF50681C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +69,14 @@ Global
 		{B535703F-8D07-4F23-A533-2974BB4CC7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B535703F-8D07-4F23-A533-2974BB4CC7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B535703F-8D07-4F23-A533-2974BB4CC7B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAAC6393-3643-4271-BFDF-13A4D257C725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAAC6393-3643-4271-BFDF-13A4D257C725}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAAC6393-3643-4271-BFDF-13A4D257C725}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAAC6393-3643-4271-BFDF-13A4D257C725}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54AE61AD-C6EA-48D4-ADE4-870CF50681C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54AE61AD-C6EA-48D4-ADE4-870CF50681C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54AE61AD-C6EA-48D4-ADE4-870CF50681C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54AE61AD-C6EA-48D4-ADE4-870CF50681C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,5 +90,9 @@ Global
 		{82492594-EB2C-4A70-B558-60F3F0D59AF9} = {D26C4D85-623C-4413-925F-6F57C7B472AC}
 		{4DD516F2-D9E5-4775-B840-E00A71DD7E87} = {82492594-EB2C-4A70-B558-60F3F0D59AF9}
 		{B535703F-8D07-4F23-A533-2974BB4CC7B1} = {11125E1A-C62A-4B57-A17B-CEC66A7F1017}
+		{A537E82C-BE9E-48C2-9818-F89C72CD4461} = {F8F8E1D3-CC62-4F56-963B-9984C063418F}
+		{BAAC6393-3643-4271-BFDF-13A4D257C725} = {A537E82C-BE9E-48C2-9818-F89C72CD4461}
+		{B8694640-DAEE-49C6-AADF-EA601A1765B9} = {F8F8E1D3-CC62-4F56-963B-9984C063418F}
+		{54AE61AD-C6EA-48D4-ADE4-870CF50681C0} = {B8694640-DAEE-49C6-AADF-EA601A1765B9}
 	EndGlobalSection
 EndGlobal

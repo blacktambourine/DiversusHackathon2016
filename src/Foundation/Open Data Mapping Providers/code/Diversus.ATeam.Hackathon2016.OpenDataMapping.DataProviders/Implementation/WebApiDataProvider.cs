@@ -10,7 +10,6 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Models;
 
 namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Implementation
 {

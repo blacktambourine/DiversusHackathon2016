@@ -50,7 +50,8 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Integration
 
                         try
                         {
-                            var items = provider.Execute(dataset.Parameters);
+                            // Temporary hack while this interface is changing
+                            var items = provider.Execute(dataset.Parameters, dataset.Parameters["webApiUrl"]);
                             if (items != null && items.Count() > 0)
                             {
                                 using (new SecurityDisabler())

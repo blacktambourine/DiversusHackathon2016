@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Integration\Agent.cs" />
+    <Compile Include="Models\DataPoint.cs" />
     <Compile Include="Models\DataSet.cs" />
     <Compile Include="Models\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

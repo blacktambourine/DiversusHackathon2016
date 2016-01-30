@@ -1,4 +1,5 @@
 ﻿using Sitecore;
+using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Foundation.SitecoreExtensions.Extensions;
@@ -18,6 +19,15 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Models
                 string.Format("'{0}' must be derrived from '{1}'", nameof(dataset), Templates.Repository.ID));
             _dataset = dataset;
         }
+
+        public ID IDs
+        {
+            get
+            {
+                return _dataset.ID;
+            }
+        }
+
         //-	OpenDataSourceType
         /// <summary>
         /// The type of the aggregation provider. 
@@ -80,13 +90,21 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Models
             }
         }
         //-	DataPointType
-        public string Coordinates { get; set; }
+        public DataPoint Coordinates { get; set; }
         //-	Colour
         public string Colour
         {
             get
             {
                 return StringUtil.GetString(_dataset[Templates.DataSet.FacetName], string.Empty);
+            }
+        }
+        public enum eFacetType { Markers, Polygon, Heatmap }
+        public eFacetType FacetType
+        {
+            get
+            {
+                return (eFacetType) Enum.Parse(typeof(eFacetType), StringUtil.GetString(_dataset, "Markers"));
             }
         }
     }

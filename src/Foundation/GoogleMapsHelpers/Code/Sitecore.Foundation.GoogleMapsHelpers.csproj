@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App_Config\Include\Foundation\Foundation.GoogleMapsHelpers.config" />
-    <Content Include="Content\GoogleMapHelpers\Foundation.GoogleMapHelpers.css" />
+    <Content Include="Content\GoogleMapHelpers\Sitecore.Foundation.GoogleMapHelpers.css" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="scripts\GoogleMapHelpers\Foundation.GoogleMapHelpers.js" />

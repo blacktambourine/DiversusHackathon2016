@@ -21,6 +21,13 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Models
             Assert.IsTrue(_item.IsDerived(Templates.Repository.ID), 
                 string.Format("'{0}' must be derrived from '{1}'", nameof(repositoryID), Templates.Repository.ID));
         }
+        public Repository(Item item)
+        {
+
+            Assert.IsTrue(item.IsDerived(Templates.Repository.ID),
+                string.Format("'{0}' must be derrived from '{1}'", nameof(item), Templates.Repository.ID));
+            _item = item;
+        }
         // Default properties to be used when rendering the Google map
         public float Longitude
         {
@@ -44,10 +51,12 @@ namespace Diversus.Hackathon2016.Foundation.OpenDataAgent.Models
             }
         }
 
-        public IEnumerable<DataSet> GetDataSets()
+        public IEnumerable<DataSet> Datasets
         {
-            return _item.Children.Where(x => x.IsDerived(Templates.DataSet.ID)).Select(x => new DataSet(x));
+            get
+            {
+                return _item.Children.Where(x => x.IsDerived(Templates.DataSet.ID)).Select(x => new DataSet(x));
+            }
         }
-
     }
 }

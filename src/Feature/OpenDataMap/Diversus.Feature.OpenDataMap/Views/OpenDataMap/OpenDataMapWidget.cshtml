@@ -1,17 +1,18 @@
-﻿@{
-    Layout = null;
-}
+﻿@using Diversus.Feature.OpenDataMap
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
 
-<!DOCTYPE html>
+@model IEnumerable<Sitecore.Data.Items.Item>
+    <div class="open-data-map-widget Foundation-GoogleMapHelpers">
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
+        <div id="map" class="map"></div>
+
+        <div id="mapFacets" class="mapFacets">
+            <input TYPE=CHECKBOX NAME="facet_0" onclick="jsGoogleMapHelpers.toggleFacet(0, 'Transit')" checked="1" class="chk-facet">Transit</input><br />
+            <input TYPE=CHECKBOX NAME="facet_1" onclick="jsGoogleMapHelpers.toggleFacet(1, 'Markers')" checked="1" class="chk-facet">Dodgy places</input><br />
+            <input TYPE=CHECKBOX NAME="facet_2" onclick="jsGoogleMapHelpers.toggleFacet(2, 'Polygon')" checked="1" class="chk-facet">NBN</input><br />
+            <input TYPE=CHECKBOX NAME="facet_3" onclick="jsGoogleMapHelpers.toggleFacet(3, 'Heatmap')" checked="1" class="chk-facet">Hot Hot Hot</input><br />
+            <input TYPE=CHECKBOX NAME="facet_11" onclick="jsGoogleMapHelpers.toggleFacet(11, 'Markers')" checked="1" class="chk-facet">Dodgy places #2</input><br />
+            <input TYPE=CHECKBOX NAME="facet_22" onclick="jsGoogleMapHelpers.toggleFacet(22, 'Polygon')" checked="1" class="chk-facet">NBN 2</input><br />
+            <input TYPE=CHECKBOX NAME="facet_33" onclick="jsGoogleMapHelpers.toggleFacet(33, 'Heatmap')" checked="1" class="chk-facet">Hot Hot Hot 2</input><br />
+        </div>
     </div>
-</body>
-</html>

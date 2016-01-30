@@ -3,11 +3,11 @@
 (function (jsGoogleMapHelpers) {
     var map;
     var facetList = [];
-
     var markers = [];
     var transitLayer;
     var transitLayerVisible = false;
-    var heatmap;
+    var polygonList = [];
+    var heatmapList = [];
 
     //initialise the map with default location
     jsGoogleMapHelpers.initMap = function (mapLatitude, mapLongitude, zoomLevel, facets) {
@@ -19,6 +19,7 @@
 
         facetList = facets;
         transitLayer = new google.maps.TransitLayer();
+        jsGoogleMapHelpers.ToggleTransitLayer(transitLayerVisible); //default
 
         //for each facet create the relevant type	
         for (var i = 0; i < facetList.length; i++) {
@@ -43,10 +44,10 @@
                 jsGoogleMapHelpers.ToggleMarkerFacet(facetId);
                 break;
             case 'Polygon':
-                //jsGoogleMapHelpers.CreatePolygonFacet(facetList[i]);
+                jsGoogleMapHelpers.TogglePolygonFacet(facetId);
                 break;
             case 'Heatmap':
-                jsGoogleMapHelpers.toggleHeatmap(facetId);
+                jsGoogleMapHelpers.ToggleHeatmapFacet(facetId);
                 break;
             case 'Transit':
                 jsGoogleMapHelpers.ToggleTransitLayer(transitLayerVisible);
@@ -125,10 +126,24 @@
         });
 
         polygonRegion.setMap(map);
+        polygonList.push(polygonRegion);
     }
 
-    //todo: 
+    jsGoogleMapHelpers.TogglePolygonFacet = function (facetId) {
+        var isEnabled = false;
+        var haveHitFirstMarker = false;
 
+        for (var i = 0; i < polygonList.length; i++) {
+            var poly = polygonList[i];
+            if (poly.id == facetId) {
+                if (haveHitFirstMarker == false) {
+                    isEnabled = poly.getVisible();
+                }
+                haveHitFirstMarker = true;
+                poly.setVisible(!isEnabled)
+            }
+        }
+    }
     //#endregion
 
     //#region heatmap
@@ -139,7 +154,7 @@
             heatPoints.push(heatPoint);
         }
 
-        heatmap = new google.maps.visualization.HeatmapLayer(
+        var heatmap = new google.maps.visualization.HeatmapLayer(
 		{
 		    id: heatmapFacet.FacetId,
 		    data: heatPoints,
@@ -147,10 +162,16 @@
 		});
 
         setHeatMapGradient(heatmapFacet.Colour, heatmap)
+        heatmapList.push(heatmap);
     }
 
-    jsGoogleMapHelpers.toggleHeatmap = function (facetId) {
-        heatmap.setMap(heatmap.getMap() ? null : map);
+    jsGoogleMapHelpers.ToggleHeatmapFacet = function (facetId) {
+        for (var i = 0; i < heatmapList.length; i++) {
+            var heatmap = heatmapList[i];
+            if (heatmap.id == facetId) {
+                heatmap.setMap(heatmap.getMap() ? null : map);
+            }
+        }
     }
 
     function setHeatMapGradient(primeColour, heatMapInstance) {

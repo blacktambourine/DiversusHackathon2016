@@ -58,13 +58,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\code\Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders\Diversus.OpenDataMapping.DataProviders.csproj">
-      <Project>{baac6393-3643-4271-bfdf-13a4d257c725}</Project>
-      <Name>Diversus.OpenDataMapping.DataProviders</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\..\code\Diversus.OpenDataMapping.DataProviders.csproj">
+      <Project>{58d0de57-0534-4c06-930f-591c7a692845}</Project>
+      <Name>Diversus.OpenDataMapping.DataProviders</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

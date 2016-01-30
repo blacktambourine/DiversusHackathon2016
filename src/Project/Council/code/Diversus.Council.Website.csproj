@@ -100,11 +100,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Project\Council.Website.Serialization.config">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
   </ItemGroup>
   <PropertyGroup>

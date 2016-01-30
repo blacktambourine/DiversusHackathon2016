@@ -108,8 +108,8 @@
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Foundation\Open Data Mapping Providers\code\Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders\Diversus.OpenDataMapping.DataProviders.csproj">
-      <Project>{baac6393-3643-4271-bfdf-13a4d257c725}</Project>
+    <ProjectReference Include="..\..\..\..\Foundation\Open Data Mapping Providers\code\Diversus.OpenDataMapping.DataProviders.csproj">
+      <Project>{58d0de57-0534-4c06-930f-591c7a692845}</Project>
       <Name>Diversus.OpenDataMapping.DataProviders</Name>
     </ProjectReference>
   </ItemGroup>

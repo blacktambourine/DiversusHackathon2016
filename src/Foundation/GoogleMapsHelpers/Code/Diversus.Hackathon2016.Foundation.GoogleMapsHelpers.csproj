@@ -43,23 +43,21 @@
   <ItemGroup>
     <None Include="App_Config\Include\Foundation\Foundation.GoogleMapsHelpers.config" />
     <Content Include="Content\GoogleMapHelpers\Foundation.GoogleMapHelpers.css" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="scripts\GoogleMapHelpers\Foundation.GoogleMapHelpers.js" />
-    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GoogleMapsConfigProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\" />
     <Folder Include="stylesheets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

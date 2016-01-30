@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BAAC6393-3643-4271-BFDF-13A4D257C725}</ProjectGuid>
+    <ProjectGuid>{58D0DE57-0534-4C06-930F-591C7A692845}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Diversus.ATeam.Hackathon2016.OpenDataMApping.DataProviders</RootNamespace>

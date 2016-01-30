@@ -49,6 +49,12 @@ Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Diversus.Hackathon2016.TDS.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diversus.Hackathon2016.Foundation.OpenDataAgent", "src\Feature\OpenDataAgent\Code\Diversus.Hackathon2016.Foundation.OpenDataAgent\Diversus.Hackathon2016.Foundation.OpenDataAgent.csproj", "{A069AEE9-8BD8-41A7-B23C-417DB6FB269F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GoogleMapsHelpers", "GoogleMapsHelpers", "{68698F80-5E2B-43E2-A2D7-530479736752}"
+EndProject
+Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Diversus.Hackathon2016.TDS.GoogleMapHelpers", "src\Foundation\GoogleMapsHelpers\TDS\Diversus.Hackathon2016.TDS.GoogleMapHelpers\Diversus.Hackathon2016.TDS.GoogleMapHelpers.scproj", "{03B11566-A203-4A2B-A7A0-32C47634FA76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diversus.Hackathon2016.Foundation.GoogleMapsHelpers", "src\Foundation\GoogleMapsHelpers\Code\Diversus.Hackathon2016.Foundation.GoogleMapsHelpers\Diversus.Hackathon2016.Foundation.GoogleMapsHelpers.csproj", "{B752CB40-93AF-4B80-9714-E5FF5D3C0AC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +87,16 @@ Global
 		{A069AEE9-8BD8-41A7-B23C-417DB6FB269F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A069AEE9-8BD8-41A7-B23C-417DB6FB269F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A069AEE9-8BD8-41A7-B23C-417DB6FB269F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03B11566-A203-4A2B-A7A0-32C47634FA76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03B11566-A203-4A2B-A7A0-32C47634FA76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03B11566-A203-4A2B-A7A0-32C47634FA76}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{03B11566-A203-4A2B-A7A0-32C47634FA76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03B11566-A203-4A2B-A7A0-32C47634FA76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03B11566-A203-4A2B-A7A0-32C47634FA76}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B752CB40-93AF-4B80-9714-E5FF5D3C0AC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B752CB40-93AF-4B80-9714-E5FF5D3C0AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B752CB40-93AF-4B80-9714-E5FF5D3C0AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B752CB40-93AF-4B80-9714-E5FF5D3C0AC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,5 +115,8 @@ Global
 		{CC37122F-5C20-486F-AAAA-00945860F501} = {D26C4D85-623C-4413-925F-6F57C7B472AC}
 		{6B4F585C-7900-4A15-B40A-2734545A9AAB} = {887E63F4-E01A-4A85-902A-F16E900B4300}
 		{A069AEE9-8BD8-41A7-B23C-417DB6FB269F} = {887E63F4-E01A-4A85-902A-F16E900B4300}
+		{68698F80-5E2B-43E2-A2D7-530479736752} = {F8F8E1D3-CC62-4F56-963B-9984C063418F}
+		{03B11566-A203-4A2B-A7A0-32C47634FA76} = {68698F80-5E2B-43E2-A2D7-530479736752}
+		{B752CB40-93AF-4B80-9714-E5FF5D3C0AC7} = {68698F80-5E2B-43E2-A2D7-530479736752}
 	EndGlobalSection
 EndGlobal

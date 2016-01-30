@@ -14,21 +14,31 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Implementat
     public class WebApiDataProvider : IDataProvider
     {
         /* Private instance variables ================================= */
-        private string _webApiUrl;
+        private JObject _sourceData;
 
+        /* Public Properties ========================================== */
+
+        public string WebAPIUrl { get; set; }
+
+        /* Constructor ===================== */
+
+        public WebApiDataProvider(string requestUrl)
+        {
+            if (string.IsNullOrEmpty(requestUrl))
+                throw new ArgumentException("requestUrl must not be empty");
+
+            this.WebAPIUrl = requestUrl;
+        }
 
         /* Private methods ============================================ */
 
-        private void DoPost(string url)
-        {
-
-        }
-
-        public static JObject MakeRequest(string requestUrl)
+        public JObject MakeRequest(string requestUrl)
         {
             try
             {
+
                 HttpWebRequest request = WebRequest.Create(requestUrl) as HttpWebRequest;
+
                 using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
                 {
                     if (response.StatusCode != HttpStatusCode.OK)
@@ -50,30 +60,12 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Implementat
             }
         }
 
-        /// <summary>
-        /// Create the RESTful request URL
-        /// </summary>
-        /// <param name="queryStringParams"></param>
-        /// <returns>Complete REST request url</returns>
-        public string CreateRESTRequestURL(string[] queryStringParams)
-        {
-            string urlRequest = _webApiUrl;
-
-            // Ensure we have trailing forward slash
-            if (!urlRequest.EndsWith(@"/"))
-                urlRequest += @"/";
-
-            foreach (var qString in queryStringParams)
-                urlRequest += qString + @"/";
-            
-
-            return (urlRequest);
-        }
+        
 
         /* Interface method implementations =========================== */
         public void AccessSource()
         {
-            throw new NotImplementedException();
+            this._sourceData = this.MakeRequest(this.WebAPIUrl);
         }
 
         public void Execute()
@@ -99,8 +91,10 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Implementat
             throw new NotImplementedException();
         }
 
-        public void ValidateSourceData()
+        public void ValidateSourceData(Dictionary<string, string> fieldsToMap)
         {
+            //_sourceData.
+
             throw new NotImplementedException();
         }
     }

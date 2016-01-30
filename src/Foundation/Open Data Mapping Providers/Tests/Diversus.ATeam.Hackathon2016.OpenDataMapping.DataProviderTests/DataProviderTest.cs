@@ -4,6 +4,8 @@ using NUnit.Framework;
 using Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders;
 using Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Interfaces;
 using Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Implementation;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 
 namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviderTests
 {
@@ -15,7 +17,7 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviderTests
         [SetUp]
         public void Init()
         {
-            _dataProvider = new WebApiDataProvider();
+            _dataProvider = new WebApiDataProvider("http://services.realestate.com.au/services/listings/sold/in-Mandurah,WA%206210/with-market-category/house");
         }
 
         [Test]
@@ -25,7 +27,9 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviderTests
             // Arrange
 
             // Act
-            var response = WebApiDataProvider.MakeRequest(requestUrl);
+            var response = _dataProvider.MakeRequest(requestUrl);
+
+            dynamic o = response;
 
             // Assert
             Assert.IsNotNull(response);

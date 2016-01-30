@@ -18,7 +18,7 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Interfaces
 
         void TransformSourceData();
 
-        void ValidateSourceData();
+        void ValidateSourceData(Dictionary<string, string> fieldsToMap);
 
     }
 }

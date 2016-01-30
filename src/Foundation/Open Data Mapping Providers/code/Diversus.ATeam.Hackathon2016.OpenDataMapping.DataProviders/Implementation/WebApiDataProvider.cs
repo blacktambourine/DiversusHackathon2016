@@ -112,5 +112,10 @@ namespace Diversus.ATeam.Hackathon2016.OpenDataMapping.DataProviders.Implementat
 
             throw new NotImplementedException();
         }
+
+        public IEnumerable<DataPoint> Execute(Dictionary<string, string> parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
